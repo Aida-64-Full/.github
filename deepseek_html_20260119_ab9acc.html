@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Перенаправление...</title>
+  <meta http-equiv="refresh" content="0; url=home.html">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #ccc;
+      font-family: Arial, sans-serif;
+    }
+    .loader {
+      text-align: center;
+    }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid #fff;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    // Дублируем перенаправление на случай, если meta-тег не сработает
+    setTimeout(function() {
+      window.location.replace("home.html");
+    }, 100);
+    
+    // Альтернативный вариант перенаправления
+    // window.location.href = "home.html";
+  </script>
+</head>
+<body>
+  <div class="loader">
+    <div class="spinner"></div>
+    <p>Перенаправляем на главную страницу...</p>
+    <p>Если перенаправление не произошло, <a href="home.html" style="color: #4dabf7;">нажмите сюда</a>.</p>
+  </div>
+</body>
+</html>
